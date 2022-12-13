@@ -1,1 +1,0 @@
-Some of the projects are unfinished and some are missing. Check the other .txt file, it contains a link to a full repo
