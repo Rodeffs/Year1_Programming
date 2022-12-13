@@ -1,0 +1,2 @@
+D:/Apps/Programming/K/C projects/lesson4/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Apps/Programming/K/C projects/lesson4/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,3 @@
+D:/Apps/Programming/T/C++ projects/Lection 5/cmake-build-debug/CMakeFiles/Lection_5.dir
+D:/Apps/Programming/T/C++ projects/Lection 5/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Apps/Programming/T/C++ projects/Lection 5/cmake-build-debug/CMakeFiles/rebuild_cache.dir

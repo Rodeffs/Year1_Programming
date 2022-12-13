@@ -1,0 +1,3 @@
+D:/Apps/Programming/K/C projects/lab4 (kr4)/cmake-build-debug/CMakeFiles/lab4__kr4_.dir
+D:/Apps/Programming/K/C projects/lab4 (kr4)/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Apps/Programming/K/C projects/lab4 (kr4)/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,3 @@
+D:/Apps/Programming/K/C projects/lesson2/cmake-build-debug/CMakeFiles/lesson2.pro.dir
+D:/Apps/Programming/K/C projects/lesson2/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Apps/Programming/K/C projects/lesson2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
