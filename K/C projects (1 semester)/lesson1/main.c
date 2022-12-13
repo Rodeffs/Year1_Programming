@@ -23,10 +23,10 @@ int main(int argc, char *argv[])
     short f, g;
     // short - 2-байтовое число со знаком
 
-    char h = 70, i='c';
+    char h = 70, i1='c';
     // char - 1-байтовое число со знаком
     // Используется значение кода символа в ACSII для символа апострофах ''
-    h + i;
+    h + i1;
 
     long ll; long long lll;
     // long - занимает 4 байта
@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
     else c = 4;
 
     if (a > 2) {
-        pass;
+
     } // После блока не надо ставить точку с запятой, если есть else
     else
         c = 4;
