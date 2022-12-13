@@ -1,4 +1,4 @@
-"D:\Apps\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=D:/Apps/CLion 2022.2.3/bin/ninja/win/ninja.exe" -G Ninja -S "D:\Apps\Programming\K\C projects\lesson3" -B "D:\Apps\Programming\K\C projects\lesson3\cmake-build-debug"
+"D:\Apps\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S "D:\Apps\Programming\Year1\K\C projects (1 semester)\lesson3" -B "D:\Apps\Programming\Year1\K\C projects (1 semester)\lesson3\cmake-build-debug"
 -- The C compiler identification is GNU 11.2.0
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
@@ -7,4 +7,4 @@
 -- Detecting C compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: D:/Apps/Programming/K/C projects/lesson3/cmake-build-debug
+-- Build files have been written to: D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson3/cmake-build-debug
