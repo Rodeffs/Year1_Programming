@@ -3,4 +3,4 @@ project(lab4 C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(lab4 main.c pilipenko_time_kr4.txt)
+add_executable(lab4 main.c pilipenko_time_kr4.txt lab4_task.jpg)

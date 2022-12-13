@@ -3,4 +3,4 @@ project(lab4__kr4_ C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(lab4__kr4_ main.c)
+add_executable(lab4__kr4_ main.c lab4_kr4_task.docx)

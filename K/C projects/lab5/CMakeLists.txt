@@ -3,4 +3,4 @@ project(lab5 C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(lab5 main.c)
+add_executable(lab5 main.c lab5_task.jpg)
