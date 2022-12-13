@@ -117,7 +117,7 @@ int main(int argc, char *argv[])
             if (cell == -1)
                 printf("*");
             else
-                printf("%d",cell)
+                printf("%d",cell);
         }
         printf("\n");
     }
