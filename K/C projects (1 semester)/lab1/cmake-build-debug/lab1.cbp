@@ -82,9 +82,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Apps/Programming/Year1/K/C projects (1 semester)/lab1/lab1_task.jpg">
-			<Option target="lab1.pro"/>
-		</Unit>
 		<Unit filename="D:/Apps/Programming/Year1/K/C projects (1 semester)/lab1/main.c">
 			<Option target="lab1.pro"/>
 		</Unit>
