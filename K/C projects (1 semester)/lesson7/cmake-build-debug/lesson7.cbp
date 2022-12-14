@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="lesson7"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="lesson7.pro">
+				<Option output="D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/lesson7.pro.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Apps/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/Apps/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/Apps/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/Apps/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 lesson7.pro"/>
+					<CompileFile command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="lesson7.pro/fast">
+				<Option output="D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/lesson7.pro.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/Apps/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/Apps/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/Apps/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/Apps/CLion 2022.2.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 lesson7.pro/fast"/>
+					<CompileFile command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Apps/CLion 2022.2.3/bin/mingw/bin/mingw32-make.exe -f &quot;D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/main.c">
+			<Option target="lesson7.pro"/>
+		</Unit>
+		<Unit filename="D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson7/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

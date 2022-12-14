@@ -1,0 +1,3 @@
+D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson1/cmake-build-debug/CMakeFiles/lesson1.pro.dir
+D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson1/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Apps/Programming/Year1/K/C projects (1 semester)/lesson1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
