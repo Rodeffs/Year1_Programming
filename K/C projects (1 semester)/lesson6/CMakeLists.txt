@@ -6,4 +6,6 @@ project (lesson6)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(lesson6.pro main.c sample.txt)
+add_executable(lesson6.pro main.c)
+
+file(COPY sample.txt DESTINATION "/")
