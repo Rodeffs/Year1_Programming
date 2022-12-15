@@ -4,5 +4,3 @@ project(lab3 C)
 set(CMAKE_C_STANDARD 17)
 
 add_executable(lab3 main.c)
-
-file(COPY lab3_task.jpg DESTINATION "/")

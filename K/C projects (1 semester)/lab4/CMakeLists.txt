@@ -6,4 +6,3 @@ set(CMAKE_C_STANDARD 17)
 add_executable(lab4 main.c)
 
 file(COPY pilipenko_time_lab4.txt DESTINATION "/")
-file(COPY lab4_task.jpg DESTINATION "/")

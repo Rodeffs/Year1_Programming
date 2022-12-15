@@ -4,5 +4,3 @@ project(lab2 C)
 set(CMAKE_C_STANDARD 17)
 
 add_executable(lab2 main.c)
-
-file(COPY lab2_task.docx DESTINATION "/")
