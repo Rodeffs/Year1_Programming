@@ -3,4 +3,4 @@ project(lesson3 C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(lesson3.pro main.c)
+add_executable(lesson3 lesson3.pro main.c)

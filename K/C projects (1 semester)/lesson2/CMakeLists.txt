@@ -5,4 +5,4 @@ set(PROJECT_NAME lesson2)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(lesson2.pro main.c)
+add_executable(lesson2 lesson2.pro main.c)
