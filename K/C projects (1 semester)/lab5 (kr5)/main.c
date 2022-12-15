@@ -1,3 +1,63 @@
+#include <stdio.h> /* Контрольная работа №5. Сделал Пилипенко Александр, 1 ПМ, 4 гр. АДМО */
+#include <math.h>
+float traverse_clockwise(float coord[], const int n) {
+    float perimeter = 0, vectors[50][3] = {0}, centreX = 0, centreY = 0, mainVector[2] = {0}; // Идея в том, чтобы провести радиус-вектор от центра к точке, затем найти углы между ним и другими радиус-векторами и по этим углам определить, в какую сторону пойдёт отсчёт
+    for (int i = 0; i < n << 1; i += 2) // vectors[][0] - это угол между главным вектором и данным радиус-вектором, vectors[][1] - координата x данного радиус-вектора, vectors[][2] - координата y данного радиус-вектора
+        centreX += coord[i], centreY += coord[i+1]; // Находим центр фигуры по формуле x0 = сумма координат x всех точек / на их количество, аналогично для y0
+    centreX /= n, centreY /= n, mainVector[0] = coord[0] - centreX, mainVector[1] = coord[1] - centreY, vectors[0][1] = coord[0], vectors[0][2] = coord[1]; // Координаты центра и главного вектора
+    for (int i = 2; i < n << 1; i += 2) {
+        float a = coord[i] - centreX, b = coord[i+1] - centreY;
+        float plusPI = (b - a * mainVector[1] / mainVector[0]) > 0 ? 180 : 0; // Нам нужно знать по какую сторону от главного вектора находиться точка, если слева - то ничего не прибавляем, а если справа - то плюс 180 градусов
+        vectors[i>>1][0] = plusPI + (180/3.14) * acosf((mainVector[0] * a + mainVector[1] * b) / sqrtf((powf(mainVector[0], 2) + powf(mainVector[1], 2)) * (powf(a, 2) + powf(b, 2)))); // Угол находим по формуле скалярного произведения векторов (из неё его проще всего выразить)
+        vectors[i>>1][1] = coord[i], vectors[i>>1][2] = coord[i+1];
+    }
+    for (int i = 0; i < n-1; i++) // Пузырьковая сортировка для расположения точек в нужном порядке
+        for (int j = i+1; j < n; j++)
+            if (vectors[j][0] <= vectors[i][0])
+                for (int k = 0; k < 3; k++) {
+                    float tmp = vectors[j][k];
+                    vectors[j][k] = vectors[i][k], vectors[i][k] = tmp; // Меняем все значения, не только угла, но и координат, иначе будет несоответствие
+                }
+    for (int i = 0; i < n-1; i++)
+        perimeter += sqrtf(powf(vectors[i + 1][1] - vectors[i][1], 2) + powf(vectors[i + 1][2] - vectors[i][2], 2));
+    return perimeter + sqrtf(powf(vectors[0][1] - vectors[n - 1][1], 2) + powf(vectors[0][2] - vectors[n - 1][2], 2)); // Не забываем прибавить значение последней стороны (в цикле оно не считается)
+}
+int main() {
+    float rect[] = {1,5,7,1,7,5,1,1}, star[] = {3.97, 0.82, 2.26, 3.69, 5.39, 2.16, 2.03, 2.11, 5.36, 4.06}, enneagon[] = {76, 67.1, -8.3, 18, 55, 93.3, 77, 33, 21.3, 99, -20, 50, -8.3, 82, 55, 6.7, 21.3, 0.76};
+    const int N1 = 4, N2 = 5, N3 = 9;
+    printf("The perimeter of rectangle is %f\nThe perimeter of star is %f\nThe perimeter of enneagon is %f\n", traverse_clockwise(rect, N1), traverse_clockwise(star, N2), traverse_clockwise(enneagon, N3));
+    return 0;
+}
+
+/* Сокращённая версия
+#include <stdio.h> // Контрольная работа №5. Сделал Пилипенко Александр, 1 ПМ, 4 гр. АДМО
+#include <math.h>
+float traverse_clockwise(float coord[], const int n) {
+    float perimeter = 0, vectors[50][3] = {0}, x0 = 0, y0 = 0, mainVector[2] = {0}; // Идея в том, чтобы провести радиус-вектор от центра к точке, затем найти углы между ним и другими радиус-векторами и по этим углам определить, в какую сторону пойдёт отсчёт
+    for (int i = 0; i < (n << 1); i += 2) // vectors[][0] - это угол между главным вектором и данным радиус-вектором, vectors[][1] - координата x данного радиус-вектора, vectors[][2] - координата y данного радиус-вектора
+        x0 += coord[i], y0 += coord[i+1]; // Находим центр фигуры по формуле x0 = сумма координат x всех точек / на их количество, аналогично для y0
+    x0 /= n, y0 /= n, mainVector[0] = coord[0] - x0, mainVector[1] = coord[1] - y0, vectors[0][1] = coord[0], vectors[0][2] = coord[1]; // Координаты центра и главного вектора
+    for (int i = 2; i < (n << 1); i += 2)  // Нам нужно знать по какую сторону от главного вектора находиться точка, если слева - то ничего не прибавляем, а если справа - то плюс 180 градусов. Угол находим по формуле скалярного произведения векторов (из неё его проще всего выразить)
+        vectors[i>>1][0] = (((coord[i+1]-y0) - (coord[i]-x0) * mainVector[1] / mainVector[0]) > 0 ? 180 : 0) + (180/3.14) * acosf((mainVector[0] * (coord[i]-x0) + mainVector[1] * (coord[i+1]-y0)) / sqrtf((powf(mainVector[0], 2) + powf(mainVector[1], 2)) * (powf((coord[i]-x0), 2) + powf((coord[i+1]-y0), 2)))), vectors[i>>1][1] = coord[i], vectors[i>>1][2] = coord[i+1];
+    for (int i = 0; i < n-1; i++) // Пузырьковая сортировка для расположения точек в нужном порядке
+        for (int j = i+1; j < n; j++)
+            if (vectors[j][0] <= vectors[i][0])
+                for (int k = 0; k < 3; k++) {
+                    float tmp = vectors[j][k];
+                    vectors[j][k] = vectors[i][k], vectors[i][k] = tmp; // Меняем все значения, не только угла, но и координат, иначе будет несоответствие
+                }
+    for (int i = 0; i < n-1; i++)
+        perimeter += sqrtf(powf(vectors[i+1][1] - vectors[i][1], 2) + powf(vectors[i+1][2] - vectors[i][2], 2));
+    return perimeter + sqrtf(powf(vectors[0][1]-vectors[n-1][1], 2) + powf(vectors[0][2]-vectors[n-1][2], 2)); // Не забываем прибавить значение последней стороны (в цикле оно не считается)
+}
+int main() {
+    float rect[] = {1,5,7,1,7,5,1,1}, star[] = {3.97, 0.82, 2.26, 3.69, 5.39, 2.16, 2.03, 2.11, 5.36, 4.06}, enneagon[] = {76, 67.1, -8.3, 18, 55, 93.3, 77, 33, 21.3, 99, -20, 50, -8.3, 82, 55, 6.7, 21.3, 0.76};
+    const int N1 = 4, N2 = 5, N3 = 9;
+    printf("The perimeter of rectangle is %f\nThe perimeter of star is %f\nThe perimeter of enneagon is %f\n", traverse_clockwise(rect, N1), traverse_clockwise(star, N2), traverse_clockwise(enneagon, N3));
+    return 0;
+}*/
+
+/* Версия со структурами
 #include <stdio.h> // Контрольная работа №5. Сделал Пилипенко Александр, 1 ПМ, 4 гр. АДМО
 #include <math.h>
 typedef struct vector {
@@ -33,68 +93,6 @@ float traverse_clockwise(const float coord[], const int n) {
 int main() {
     float rect[] = {1,5,7,1,7,5,1,1}, star[] = {3.97, 0.82, 2.26, 3.69, 5.39, 2.16, 2.03, 2.11, 5.36, 4.06}, enneagon[] = {76, 67.1, -8.3, 18, 55, 93.3, 77, 33, 21.3, 99, -20, 50, -8.3, 82, 55, 6.7, 21.3, 0.76};
     printf("The perimeter of rectangle is %f\nThe perimeter of star is %f\nThe perimeter of enneagon is %f\n", traverse_clockwise(rect,  (sizeof (rect)/sizeof (float))>>1), traverse_clockwise(star, (sizeof (star)/sizeof (float))>>1), traverse_clockwise(enneagon, (sizeof (enneagon)/sizeof (float))>>1));
-    return 0;
-}
-
-/* Версия без структур
-#include <stdio.h> // Контрольная работа №5. Сделал Пилипенко Александр, 1 ПМ, 4 гр. АДМО
-#include <math.h>
-float traverse_clockwise(float coord[], const int n) {
-    float perimeter = 0, vectors[50][3] = {0}, centreX = 0, centreY = 0, mainVector[2] = {0}; // Идея в том, чтобы провести радиус-вектор от центра к точке, затем найти углы между ним и другими радиус-векторами и по этим углам определить, в какую сторону пойдёт отсчёт
-    for (int i = 0; i < n << 1; i += 2) // vectors[][0] - это угол между главным вектором и данным радиус-вектором, vectors[][1] - координата x данного радиус-вектора, vectors[][2] - координата y данного радиус-вектора
-        centreX += coord[i], centreY += coord[i+1]; // Находим центр фигуры по формуле x0 = сумма координат x всех точек / на их количество, аналогично для y0
-    centreX /= n, centreY /= n, mainVector[0] = coord[0] - centreX, mainVector[1] = coord[1] - centreY, vectors[0][1] = coord[0], vectors[0][2] = coord[1]; // Координаты центра и главного вектора
-    for (int i = 2; i < n << 1; i += 2) {
-        float a = coord[i] - centreX, b = coord[i+1] - centreY;
-//        vectors[i>>1][0] = atan2f(mainVector[0]+mainVector[1], a+b); // Другое решение через arctg (для 9-угольника выдаёт другой результат)
-        float plusPI = (b - a * mainVector[1] / mainVector[0]) > 0 ? 180 : 0; // Нам нужно знать по какую сторону от главного вектора находиться точка, если слева - то ничего не прибавляем, а если справа - то плюс 180 градусов
-        vectors[i>>1][0] = plusPI + (180/3.14) * acosf((mainVector[0] * a + mainVector[1] * b) / sqrtf((powf(mainVector[0], 2) + powf(mainVector[1], 2)) * (powf(a, 2) + powf(b, 2)))); // Угол находим по формуле скалярного произведения векторов (из неё его проще всего выразить)
-        vectors[i>>1][1] = coord[i], vectors[i>>1][2] = coord[i+1];
-    }
-    for (int i = 0; i < n-1; i++) // Пузырьковая сортировка для расположения точек в нужном порядке
-        for (int j = i+1; j < n; j++)
-            if (vectors[j][0] <= vectors[i][0])
-                for (int k = 0; k < 3; k++) {
-                    float tmp = vectors[j][k];
-                    vectors[j][k] = vectors[i][k], vectors[i][k] = tmp; // Меняем все значения, не только угла, но и координат, иначе будет несоответствие
-                }
-    for (int i = 0; i < n-1; i++)
-        perimeter += sqrtf(powf(vectors[i + 1][1] - vectors[i][1], 2) + powf(vectors[i + 1][2] - vectors[i][2], 2));
-    return perimeter + sqrtf(powf(vectors[0][1] - vectors[n - 1][1], 2) + powf(vectors[0][2] - vectors[n - 1][2], 2)); // Не забываем прибавить значение последней стороны (в цикле оно не считается)
-}
-int main() {
-    float rect[] = {1,5,7,1,7,5,1,1}, star[] = {3.97, 0.82, 2.26, 3.69, 5.39, 2.16, 2.03, 2.11, 5.36, 4.06}, enneagon[] = {76, 67.1, -8.3, 18, 55, 93.3, 77, 33, 21.3, 99, -20, 50, -8.3, 82, 55, 6.7, 21.3, 0.76};
-    const int N1 = 4, N2 = 5, N3 = 9;
-    printf("The perimeter of rectangle is %f\nThe perimeter of star is %f\nThe perimeter of enneagon is %f\n", traverse_clockwise(rect, N1), traverse_clockwise(star, N2), traverse_clockwise(enneagon, N3));
-    return 0;
-}
- */
-
-/* Сокращённая версия
-#include <stdio.h> // Контрольная работа №5. Сделал Пилипенко Александр, 1 ПМ, 4 гр. АДМО
-#include <math.h>
-float traverse_clockwise(float coord[], const int n) {
-    float perimeter = 0, vectors[50][3] = {0}, x0 = 0, y0 = 0, mainVector[2] = {0}; // Идея в том, чтобы провести радиус-вектор от центра к точке, затем найти углы между ним и другими радиус-векторами и по этим углам определить, в какую сторону пойдёт отсчёт
-    for (int i = 0; i < (n << 1); i += 2) // vectors[][0] - это угол между главным вектором и данным радиус-вектором, vectors[][1] - координата x данного радиус-вектора, vectors[][2] - координата y данного радиус-вектора
-        x0 += coord[i], y0 += coord[i+1]; // Находим центр фигуры по формуле x0 = сумма координат x всех точек / на их количество, аналогично для y0
-    x0 /= n, y0 /= n, mainVector[0] = coord[0] - x0, mainVector[1] = coord[1] - y0, vectors[0][1] = coord[0], vectors[0][2] = coord[1]; // Координаты центра и главного вектора
-    for (int i = 2; i < (n << 1); i += 2)  // Нам нужно знать по какую сторону от главного вектора находиться точка, если слева - то ничего не прибавляем, а если справа - то плюс 180 градусов. Угол находим по формуле скалярного произведения векторов (из неё его проще всего выразить)
-        vectors[i>>1][0] = (((coord[i+1]-y0) - (coord[i]-x0) * mainVector[1] / mainVector[0]) > 0 ? 180 : 0) + (180/3.14) * acosf((mainVector[0] * (coord[i]-x0) + mainVector[1] * (coord[i+1]-y0)) / sqrtf((powf(mainVector[0], 2) + powf(mainVector[1], 2)) * (powf((coord[i]-x0), 2) + powf((coord[i+1]-y0), 2)))), vectors[i>>1][1] = coord[i], vectors[i>>1][2] = coord[i+1];
-    for (int i = 0; i < n-1; i++) // Пузырьковая сортировка для расположения точек в нужном порядке
-        for (int j = i+1; j < n; j++)
-            if (vectors[j][0] <= vectors[i][0])
-                for (int k = 0; k < 3; k++) {
-                    float tmp = vectors[j][k];
-                    vectors[j][k] = vectors[i][k], vectors[i][k] = tmp; // Меняем все значения, не только угла, но и координат, иначе будет несоответствие
-                }
-    for (int i = 0; i < n-1; i++)
-        perimeter += sqrtf(powf(vectors[i+1][1] - vectors[i][1], 2) + powf(vectors[i+1][2] - vectors[i][2], 2));
-    return perimeter + sqrtf(powf(vectors[0][1]-vectors[n-1][1], 2) + powf(vectors[0][2]-vectors[n-1][2], 2)); // Не забываем прибавить значение последней стороны (в цикле оно не считается)
-}
-int main() {
-    float rect[] = {1,5,7,1,7,5,1,1}, star[] = {3.97, 0.82, 2.26, 3.69, 5.39, 2.16, 2.03, 2.11, 5.36, 4.06}, enneagon[] = {76, 67.1, -8.3, 18, 55, 93.3, 77, 33, 21.3, 99, -20, 50, -8.3, 82, 55, 6.7, 21.3, 0.76};
-    const int N1 = 4, N2 = 5, N3 = 9;
-    printf("The perimeter of rectangle is %f\nThe perimeter of star is %f\nThe perimeter of enneagon is %f\n", traverse_clockwise(rect, N1), traverse_clockwise(star, N2), traverse_clockwise(enneagon, N3));
     return 0;
 }*/
 

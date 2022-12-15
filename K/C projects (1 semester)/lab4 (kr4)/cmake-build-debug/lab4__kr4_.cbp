@@ -76,9 +76,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Apps/Programming/Year1/K/C projects (1 semester)/lab4 (kr4)/lab4_kr4_task.docx">
-			<Option target="lab4__kr4_"/>
-		</Unit>
 		<Unit filename="D:/Apps/Programming/Year1/K/C projects (1 semester)/lab4 (kr4)/main.c">
 			<Option target="lab4__kr4_"/>
 		</Unit>

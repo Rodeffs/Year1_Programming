@@ -1,8 +1,4 @@
 "D:\Apps\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S "D:\Apps\Programming\Year1\K\C projects (1 semester)\lab4 (kr4)" -B "D:\Apps\Programming\Year1\K\C projects (1 semester)\lab4 (kr4)\cmake-build-debug"
-CMake Error at CMakeLists.txt:8 (file):
-  file COPY cannot find "D:/Apps/Programming/Year1/K/C projects (1
-  semester)/lab4 (kr4)/lab4_kr4_task.docx": No such file or directory.
-
-
--- Configuring incomplete, errors occurred!
-See also "D:/Apps/Programming/Year1/K/C projects (1 semester)/lab4 (kr4)/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/Apps/Programming/Year1/K/C projects (1 semester)/lab4 (kr4)/cmake-build-debug
