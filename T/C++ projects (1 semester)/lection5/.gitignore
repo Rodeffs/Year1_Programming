@@ -1,0 +1,6 @@
+# UNNEDED FILES:
+
+*.vcxproj
+*.sln
+**/cmake-build-debug
+**/.vs

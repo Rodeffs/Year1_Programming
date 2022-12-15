@@ -1,2 +1,0 @@
-D:/Apps/Programming/T/C++ projects/Lection 6/Lection 6/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Apps/Programming/T/C++ projects/Lection 6/Lection 6/cmake-build-debug/CMakeFiles/rebuild_cache.dir
