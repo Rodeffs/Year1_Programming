@@ -1,5 +1,7 @@
 # UNNEDED FILES:
 
-vcxproj
-sln
+*.vcxproj
+*.sln
+*.filters
+*.user
 **/.vs
