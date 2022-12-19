@@ -91,13 +91,6 @@
 			[
 				0
 			]
-		},
-		{
-			"name" : "Resources",
-			"sourceIndexes" : 
-			[
-				1
-			]
 		}
 	],
 	"sources" : 
@@ -107,11 +100,6 @@
 			"compileGroupIndex" : 0,
 			"path" : "main.c",
 			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "lab5_kr5_task.jpg",
-			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"
